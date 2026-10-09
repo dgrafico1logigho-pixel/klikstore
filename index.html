@@ -6,6 +6,7 @@
     <title>Klik Store - Moda & Hogar</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
     <style>
         body { font-family: 'Poppins', sans-serif; }
     </style>
@@ -13,57 +14,157 @@
 <body class="bg-gray-50 flex flex-col min-h-screen">
 
     <!-- Header -->
-    <header class="bg-white shadow-sm border-b-4 border-teal-500">
+    <header class="bg-white shadow-sm border-b-4 border-teal-500 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 py-4 sm:px-6 lg:px-8 flex justify-between items-center">
             <h1 class="text-3xl font-bold text-gray-900 tracking-tight">
-                <span class="text-blue-900">Klik</span> <span class="text-orange-500">Store</span>
+                <a href="index.html">
+                    <span class="text-blue-900">Klik</span> <span class="text-orange-500">Store</span>
+                </a>
             </h1>
             <nav class="hidden md:flex space-x-8">
-                <a href="#" class="text-gray-600 hover:text-teal-600 font-medium">Inicio</a>
-                <a href="#" class="text-gray-600 hover:text-teal-600 font-medium">Hogar</a>
-                <a href="#" class="text-gray-600 hover:text-teal-600 font-medium">Moda</a>
-                <a href="#" class="text-gray-600 hover:text-teal-600 font-medium">Contacto</a>
+                <a href="index.html" class="text-teal-600 font-semibold border-b-2 border-teal-600">Inicio</a>
+                <a href="#hogar" class="text-gray-600 hover:text-teal-600 font-medium transition">Hogar</a>
+                <a href="#moda" class="text-gray-600 hover:text-teal-600 font-medium transition">Moda</a>
+                <a href="https://wa.me/573042325526" target="_blank" class="text-gray-600 hover:text-teal-600 font-medium transition">Contacto</a>
             </nav>
+            <a href="https://wa.me/573042325526" target="_blank" class="hidden md:inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-green-500 hover:bg-green-600 transition">
+                <i class="fab fa-whatsapp mr-2 text-lg"></i> Pedir ahora
+            </a>
         </div>
     </header>
 
-    <!-- Main Content (Hero Section Placeholder) -->
+    <!-- Hero Section -->
     <main class="flex-grow">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
-            <h2 class="text-4xl font-extrabold text-gray-900 sm:text-5xl">
-                ¡A un klik de tu hogar y estilo!
-            </h2>
-            <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
-                Encuentra los mejores artículos de moda y productos para tu hogar. Envíos seguros y atención personalizada.
-            </p>
-            <div class="mt-8 flex justify-center">
-                <div class="inline-flex rounded-md shadow">
-                    <a href="https://wa.me/573042325526" target="_blank" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-500 hover:bg-green-600">
-                        Pídelo por WhatsApp
+        <div class="relative bg-blue-900 text-white overflow-hidden">
+            <div class="absolute inset-0">
+                <img src="https://images.unsplash.com/photo-1522204523234-8729aa6e3d5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Hogar y estilo" class="w-full h-full object-cover opacity-20">
+            </div>
+            <div class="relative max-w-7xl mx-auto px-4 py-20 sm:py-24 sm:px-6 lg:px-8 flex flex-col items-center text-center">
+                <h2 class="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl text-white">
+                    ¡A un <span class="text-orange-500">klik</span> de tu hogar y estilo!
+                </h2>
+                <p class="mt-6 max-w-2xl text-xl text-gray-300">
+                    Encuentra los mejores artículos de moda y productos para tu hogar. Calidad asegurada, envíos seguros y atención completamente personalizada.
+                </p>
+                <div class="mt-10 flex justify-center gap-4">
+                    <a href="https://wa.me/573042325526" target="_blank" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-bold rounded-md text-white bg-green-500 hover:bg-green-600 shadow-lg transition transform hover:-translate-y-1">
+                        <i class="fab fa-whatsapp mr-2 text-xl"></i> Comprar por WhatsApp
                     </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Featured Categories -->
+        <div class="py-16 bg-white" id="categorias">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl font-extrabold text-gray-900">Explora Nuestras Categorías</h2>
+                    <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">Todo lo que necesitas en un solo lugar.</p>
+                </div>
+
+                <div class="mt-12 grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-2">
+                    <!-- Moda -->
+                    <div id="moda" class="relative group rounded-xl overflow-hidden shadow-lg bg-gray-100 hover:shadow-2xl transition duration-300">
+                        <img src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Moda" class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
+                            <div>
+                                <h3 class="text-2xl font-bold text-white">Moda</h3>
+                                <p class="text-gray-200 mt-2">Estilo y tendencias para ti.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hogar -->
+                    <div id="hogar" class="relative group rounded-xl overflow-hidden shadow-lg bg-gray-100 hover:shadow-2xl transition duration-300">
+                        <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Hogar" class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
+                            <div>
+                                <h3 class="text-2xl font-bold text-white">Hogar</h3>
+                                <p class="text-gray-200 mt-2">Decora y organiza tus espacios.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trust badges -->
+        <div class="bg-teal-50 py-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div class="flex flex-col items-center">
+                        <div class="bg-white p-4 rounded-full shadow-md text-teal-600 mb-4">
+                            <i class="fas fa-truck text-2xl"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-900">Envíos Seguros</h4>
+                        <p class="text-gray-600">A todo el territorio nacional.</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="bg-white p-4 rounded-full shadow-md text-teal-600 mb-4">
+                            <i class="fas fa-headset text-2xl"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-900">Atención Personalizada</h4>
+                        <p class="text-gray-600">Soporte directo vía WhatsApp.</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="bg-white p-4 rounded-full shadow-md text-teal-600 mb-4">
+                            <i class="fas fa-shield-alt text-2xl"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-900">Compra Segura</h4>
+                        <p class="text-gray-600">Garantía en todos nuestros productos.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </main>
 
     <!-- Compliance Footer para Meta Verificación -->
-    <footer class="bg-gray-800 text-gray-300 py-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Columna 1: Marca -->
             <div>
-                <h3 class="text-xl font-bold text-white mb-4">Klik Store</h3>
-                <p class="text-sm">Tu tienda de confianza para hogar y estilo.</p>
+                <h3 class="text-2xl font-bold text-white tracking-tight mb-4">
+                    <span class="text-blue-400">Klik</span> <span class="text-orange-500">Store</span>
+                </h3>
+                <p class="text-sm text-gray-400 mb-4">Tu tienda de confianza para hogar y estilo. Nos enfocamos en ofrecerte calidad y un servicio excepcional directamente a tu puerta.</p>
+                <div class="flex space-x-4">
+                    <a href="https://wa.me/573042325526" target="_blank" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-facebook text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                </div>
             </div>
-            <div class="text-sm md:text-right">
-                <h3 class="text-lg font-bold text-white mb-4">Información Legal y Contacto</h3>
-                <p><strong>Razón Social:</strong> BASIC 3000 CALI SAS</p>
-                <p><strong>NIT:</strong> 900363954-3</p>
-                <p><strong>Dirección:</strong> CL 43 NORTE # 11 - 321 CS 9, Cali - Valle del Cauca</p>
-                <p><strong>Teléfono:</strong> 3042325526</p>
-                <p><strong>Correo:</strong> <a href="mailto:administracion@klikstore.online" class="text-teal-400 hover:underline">administracion@klikstore.online</a></p>
+
+            <!-- Columna 2: Legal y Contacto Oficial -->
+            <div>
+                <h3 class="text-lg font-bold text-white mb-4 border-b border-gray-700 pb-2">Información Legal y Contacto</h3>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li><strong class="text-gray-300">Razón Social:</strong> BASIC 3000 CALI SAS</li>
+                    <li><strong class="text-gray-300">NIT:</strong> 900363954-3</li>
+                    <li><strong class="text-gray-300">Dirección:</strong> CL 43 NORTE # 11 - 321 CS 9</li>
+                    <li><strong class="text-gray-300">Ciudad:</strong> Cali - Valle del Cauca, Colombia</li>
+                    <li><strong class="text-gray-300">Teléfono:</strong> +57 3042325526</li>
+                    <li><strong class="text-gray-300">Correo:</strong> <a href="mailto:administracion@klikstore.online" class="hover:text-teal-400 transition">administracion@klikstore.online</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna 3: Enlaces Legales -->
+            <div>
+                <h3 class="text-lg font-bold text-white mb-4 border-b border-gray-700 pb-2">Políticas</h3>
+                <ul class="space-y-3 text-sm">
+                    <li><a href="terminos.html" class="text-gray-400 hover:text-teal-400 transition flex items-center"><i class="fas fa-chevron-right text-xs mr-2"></i> Términos y Condiciones</a></li>
+                    <li><a href="privacidad.html" class="text-gray-400 hover:text-teal-400 transition flex items-center"><i class="fas fa-chevron-right text-xs mr-2"></i> Políticas de Privacidad</a></li>
+                </ul>
             </div>
         </div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 border-t border-gray-700 pt-8 text-sm text-center">
-            &copy; 2026 BASIC 3000 CALI SAS. Todos los derechos reservados.
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+            <p>&copy; 2026 BASIC 3000 CALI SAS. Todos los derechos reservados.</p>
+            <p class="mt-2 md:mt-0">Sitio oficial para Klik Store Colombia.</p>
         </div>
     </footer>
 
